@@ -35,19 +35,45 @@
     </ul>
     <div class="main">
         <div class="fadeTop"></div>
-            <div class="album">
-                <img src="test.jpg">
+        <div class="album">
+            <img class="b-lazy" src="tiny.gif" data-src="test2.jpg">
             </div>
             <div class="album">
-                <img src="test2.jpg">
+                <img class="b-lazy" src="tiny.gif" data-src="test2.jpg">
             </div>
-            <div class="album" style="margin-bottom: 10px">
-                <img src="test.jpg">
+            <div class="album">
+                <img class="b-lazy" src="tiny.gif" data-src="test2.jpg">
             </div>
-        </div>
-    <div class="footer">
-        <h2>Footer</h2>
-    </div>
+            <div class="album">
+                <img class="b-lazy" src="tiny.gif" data-src="test2.jpg">
+            </div>
+            <div class="album">
+                <img class="b-lazy" src="tiny.gif" data-src="test2.jpg">
+            </div>
+            <div class="album">
+                <img class="b-lazy" src="tiny.gif" data-src="test2.jpg">
+            </div>
+                <div class="album" style="margin-bottom: 10px">
+                    <img class="b-lazy" src="tiny.gif" data-src="test.jpg">
+            </div>
+                </div>
+                <div class="footer">
+                    <h2>Footer</h2>
+                </div>
+                <script src="//cdn.jsdelivr.net/blazy/latest/blazy.min.js"></script>
+                <script>
+                ;
+                (function() {
+                    // Initialize
+                    var bLazy = new Blazy({
+                        breakpoints: [{
+                            width: 600 // max-width
+                                ,
+                            src: 'data-src-small'
+                        }]
+                    });
+                })();
+                </script>
 </body>
 
 </html>

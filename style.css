@@ -7,6 +7,7 @@ body {
     font-size: 100%;
     margin: 0;
 }
+
 /*header size defined by navbar height. Font scalable by view width. zindex to for fade*/
 .header {
     display: flex;
@@ -17,11 +18,13 @@ body {
     font-size: 4vw;
     z-index: 1;
 }
+
 /*header text*/
 .header h1 {
     opacity: 1;
     position: fixed;
 }
+
 /*gradient which controls fade*/
 .fadeTop {
     width: 100%;
@@ -32,6 +35,7 @@ body {
     background: linear-gradient(to bottom, rgba(174, 174, 174, 0) 0%, rgba(174, 174, 174, .1) 60%, rgba(174, 174, 174, 0.5) 65%, rgba(174, 174, 174, 0.95) 90%, rgba(174, 174, 174, 1) 100%);
     /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
 }
+
 /*main flex container*/
 .main {
     display: flex;
@@ -41,6 +45,7 @@ body {
     background-color: #282828;
     z-index: 3;
 }
+
 /*album with flex properties*/
 .album {
     flex: 95%;
@@ -48,10 +53,22 @@ body {
     z-index: 4;
     margin-top: 10px;
 }
+
 /*album images properties*/
 .album img {
     max-width: 100%;
     max-height: calc(98vh - (3 * 51px) - 10px);
+    border-radius: 5px;
+}
+/*lazy loading transitions*/
+.b-lazy {
+    transition: opacity 500ms ease-in-out;
+    max-width: 100%;
+    opacity: 0;
+}
+
+.b-lazy.b-loaded {
+    opacity: 1;
 }
 
 /*Navbar*/
@@ -91,6 +108,7 @@ ul.topnav li a.active {
 ul.topnav li.right {
     float: none;
 }
+
 /*responsive for screen width. mobile first design*/
 @media screen and (min-width: 600px) {
     ul.topnav li.right {
