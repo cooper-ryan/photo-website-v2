@@ -40,8 +40,8 @@ body {
 .main {
     display: flex;
     flex-wrap: nowrap;
-    flex-direction: row;
-    align-items: flex-start;
+    flex-direction: column;
+    align-items: center;
     justify-content: center;
     background-color: #282828;
     z-index: 3;
@@ -49,17 +49,31 @@ body {
 
 /*album with flex properties*/
 .album {
-    flex-basis: 80%;
-    z-index: 4;
-    margin-left: 10px;
+    padding-left: 2.5%;
+    display: grid;
+    grid-template-columns: 97.5%;
+    grid-gap: 10px;
+    grid-template-areas:
+        "photo"
+        "description";
+    z-index: 4
 }
-.text{
-    flex-basis: 20%;
-    z-index: 4;
+
+.photo {
+    grid-area: photo;
 }
+
+.description {
+    grid-area: description;
+    align-content: flex-end;
+}
+.description p{
+    color: #AEAEAE;
+}
+
 /*album images properties*/
 .album img {
-    /*max-width: 100%;*/
+    max-width: 100%;
     max-height: calc(98vh - (3 * 51px) - 10px);
     border-radius: 5px;
     margin-top: 10px;
@@ -68,7 +82,7 @@ body {
 /*lazy loading transitions*/
 .b-lazy {
     transition: opacity 500ms ease-in-out;
-    max-width: 80%;
+    max-width: 100%;
     opacity: 0;
 }
 
@@ -122,6 +136,13 @@ ul.topnav li.right {
 
     ul.topnav li {
         float: left;
+    }
+
+    .album {
+        padding-left: 1%;
+        grid-template-columns: 80% auto;
+        grid-template-areas:
+            "photo description";
     }
 
     .album img {
