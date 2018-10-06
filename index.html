@@ -36,44 +36,39 @@
     <div class="main">
         <div class="fadeTop"></div>
         <div class="album">
-            <img class="b-lazy" src="tiny.gif" data-src="test2.jpg">
+            <img class="b-lazy" src="tiny.gif" data-src="test2.jpg" data-src-small="test2_600.jpg">
+            <img class="b-lazy" src="tiny.gif" data-src="test2.jpg" data-src-small="test2_600.jpg">
+            <img class="b-lazy" src="tiny.gif" data-src="test2.jpg" data-src-small="test2_600.jpg">
+            <img class="b-lazy" src="tiny.gif" data-src="test2.jpg" data-src-small="test2_600.jpg">
+            <img class="b-lazy" src="tiny.gif" data-src="test2.jpg" data-src-small="test2_600.jpg">
+            <img class="b-lazy" src="tiny.gif" data-src="test2.jpg" data-src-small="test2_600.jpg">
+            <img class="b-lazy" src="tiny.gif" data-src="test.jpg" data-src-small="test_600.jpg">
+        </div>
+        <div class="text">
+            <p>Blah1</p>
+            <p>Blah2</p>
+        </div>
+    </div>
+            <div class="footer">
+                <h2>Footer</h2>
             </div>
-            <div class="album">
-                <img class="b-lazy" src="tiny.gif" data-src="test2.jpg">
-            </div>
-            <div class="album">
-                <img class="b-lazy" src="tiny.gif" data-src="test2.jpg">
-            </div>
-            <div class="album">
-                <img class="b-lazy" src="tiny.gif" data-src="test2.jpg">
-            </div>
-            <div class="album">
-                <img class="b-lazy" src="tiny.gif" data-src="test2.jpg">
-            </div>
-            <div class="album">
-                <img class="b-lazy" src="tiny.gif" data-src="test2.jpg">
-            </div>
-                <div class="album" style="margin-bottom: 10px">
-                    <img class="b-lazy" src="tiny.gif" data-src="test.jpg">
-            </div>
-                </div>
-                <div class="footer">
-                    <h2>Footer</h2>
-                </div>
-                <script src="//cdn.jsdelivr.net/blazy/latest/blazy.min.js"></script>
-                <script>
-                ;
-                (function() {
-                    // Initialize
-                    var bLazy = new Blazy({
-                        breakpoints: [{
-                            width: 600 // max-width
-                                ,
-                            src: 'data-src-small'
-                        }]
-                    });
-                })();
-                </script>
+            <!-- Lazy load images load and options-->
+            <script src="//cdn.jsdelivr.net/blazy/latest/blazy.min.js"></script>
+            <script>
+            ;
+            (function() {
+                // Initialize
+                var bLazy = new Blazy({
+                    breakpoints: [{
+                        width: 600 // max-width
+                            ,
+                        src: 'data-src-small'
+                    }],
+                    offset: 50,
+                    container: '#scrolling-container',
+                });
+            })();
+            </script>
 </body>
 
 </html>
