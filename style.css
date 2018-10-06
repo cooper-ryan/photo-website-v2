@@ -3,7 +3,7 @@
 }
 
 body {
-    font-family: Helvetica, Arial, sans-serif;
+    font-family: 'Raleway',arial,sans-serif;
     font-size: 100%;
     margin: 0;
 }
@@ -47,7 +47,14 @@ body {
     z-index: 3;
 }
 
-/*album with flex properties*/
+/*album images on album page*/
+.main img {
+    max-width: 100%;
+    max-height: calc(98vh - 51px - 10px);
+    margin-bottom: 3%;
+}
+
+/*homepage album grid with text bar*/
 .album {
     padding-left: 2.5%;
     display: grid;
@@ -65,9 +72,9 @@ body {
 
 .description {
     grid-area: description;
-    align-content: flex-end;
 }
-.description p{
+
+.description p {
     color: #AEAEAE;
 }
 
