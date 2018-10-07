@@ -17,7 +17,7 @@ body {
     flex-wrap: nowrap;
     height: 100vh;
     justify-content: center;
-    background-image: url("/test2.jpg");
+    background-image: url("test2.jpg");
     background-position: center;
     background-size: cover;
     background-color: #AEAEAE;
@@ -79,6 +79,7 @@ body {
 
 .description p {
     color: #AEAEAE;
+    align-self: end;
 }
 
 /*album images properties*/
