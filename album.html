@@ -32,12 +32,13 @@
         <!--   <li class="right"><a href="#about">About</a></li> -->
     </ul>
     <div class="main">
-        <img class="b-lazy" src="tiny.gif" data-src="test2.jpg" data-src-small="test2_600.jpg">
-        <img class="b-lazy" src="tiny.gif" data-src="test2.jpg" data-src-small="test2_600.jpg">
-        <img class="b-lazy" src="tiny.gif" data-src="test2.jpg" data-src-small="test2_600.jpg"><img class="b-lazy" src="tiny.gif" data-src="test2.jpg" data-src-small="test2_600.jpg">
-        <img class="b-lazy" src="tiny.gif" data-src="test2.jpg" data-src-small="test2_600.jpg">
-        <img class="b-lazy" src="tiny.gif" data-src="test2.jpg" data-src-small="test2_600.jpg">
-        <img class="b-lazy" src="tiny.gif" data-src="test2.jpg" data-src-small="test2_600.jpg">
+        <img class="b-lazy" src="tiny.gif" data-src="test2.jpg" data-src-small="test2_480.jpg" data-src-med="test2_1000.jpg">
+        <img class="b-lazy" src="tiny.gif" data-src="test2.jpg" data-src-small="test2_480.jpg" data-src-med="test2_1000.jpg">
+        <img class="b-lazy" src="tiny.gif" data-src="test2.jpg" data-src-small="test2_480.jpg" data-src-med="test2_1000.jpg">
+        <img class="b-lazy" src="tiny.gif" data-src="test2.jpg" data-src-small="test2_480.jpg" data-src-med="test2_1000.jpg">
+        <img class="b-lazy" src="tiny.gif" data-src="test2.jpg" data-src-small="test2_480.jpg" data-src-med="test2_1000.jpg">
+        <img class="b-lazy" src="tiny.gif" data-src="test2.jpg" data-src-small="test2_480.jpg" data-src-med="test2_1000.jpg">
+        <img class="b-lazy" src="tiny.gif" data-src="test2.jpg" data-src-small="test2_480.jpg" data-src-med="test2_1000.jpg">
 
     </div>
         <!-- Lazy load images load and options-->
@@ -48,9 +49,13 @@
             // Initialize
             var bLazy = new Blazy({
                 breakpoints: [{
-                    width: 600 // max-width
+                    width: 480 // max-width
                         ,
-                    src: 'data-src-small'
+                    src: 'data-src-small'}
+                    ,
+                    {width: 1000
+                    ,
+                    src: 'data-src-med'
                 }],
                 container: '#scrolling-container',
             });

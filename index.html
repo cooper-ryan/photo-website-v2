@@ -9,6 +9,7 @@
     <meta name="author" content="Ryan Cooper">
     <link rel="stylesheet" href="style.css">
     <link href="https://fonts.googleapis.com/css?family=Raleway:500" rel="stylesheet"> 
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <!-- Heap Analytics -->
     <!--  <script type="text/javascript">
     window.heap = window.heap || [], heap.load = function(e, t) {
@@ -35,10 +36,10 @@
         <!--   <li class="right"><a href="#about">About</a></li> -->
     </ul>
     <div id="home" class="main">
-        <div class="fadeTop"></div>
+        <!-- <div class="fadeTop"></div> -->
         <div class="album">
             <div class="photo">
-                <a href="/album.html"><img class="b-lazy" src="tiny.gif" data-src="test2.jpg" data-src-small="test2_600.jpg"></a>
+                <a href="/album.html"><img class="b-lazy" src="tiny.gif" data-src="test.jpg" data-src-small="test_480.jpg" data-src-med="test_1000.jpg"></a>
             </div>
             <div class="description">
                 <p>Test one two three</p>
@@ -46,7 +47,7 @@
         </div>
         <div class="album">
             <div class="photo">
-                <img class="b-lazy" src="tiny.gif" data-src="test2.jpg" data-src-small="test2_600.jpg">
+                <img class="b-lazy" src="tiny.gif" data-src="test.jpg" data-src-small="test_480.jpg" data-src-med="test_1000.jpg">
             </div>
             <div class="description">
                 <p>Test one two three</p>
@@ -54,7 +55,7 @@
         </div>
         <div class="album">
             <div class="photo">
-                <img class="b-lazy" src="tiny.gif" data-src="test2.jpg" data-src-small="test2_600.jpg">
+                <img class="b-lazy" src="tiny.gif" data-src="test2.jpg" data-src-small="test2_480.jpg" data-src-med="test2_1000.jpg">
             </div>
             <div class="description">
                 <p>Test one two three</p>
@@ -62,7 +63,7 @@
         </div>
         <div class="album">
             <div class="photo">
-                <img class="b-lazy" src="tiny.gif" data-src="test2.jpg" data-src-small="test2_600.jpg">
+                <img class="b-lazy" src="tiny.gif" data-src="test.jpg" data-src-small="test_480.jpg" data-src-med="test_1000.jpg">
             </div>
             <div class="description">
                 <p>Test one two three</p>
@@ -70,7 +71,7 @@
         </div>
         <div class="album">
             <div class="photo">
-                <img class="b-lazy" src="tiny.gif" data-src="test.jpg" data-src-small="test_600.jpg">
+                <img class="b-lazy" src="tiny.gif" data-src="test.jpg" data-src-small="test_480.jpg" data-src-med="test_1000.jpg">
             </div>
             <div class="description">
                 <p>Test one two three</p>
@@ -78,7 +79,7 @@
         </div>
         <div class="album">
             <div class="photo">
-                <img class="b-lazy" src="tiny.gif" data-src="test2.jpg" data-src-small="test2_600.jpg">
+                <img class="b-lazy" src="tiny.gif" data-src="test2.jpg" data-src-small="test2_480.jpg" data-src-med="test2_1000.jpg">
             </div>
             <div class="description">
                 <p>Test one two three</p>
@@ -86,7 +87,7 @@
         </div>
         <div class="album">
             <div class="photo">
-                <img class="b-lazy" src="tiny.gif" data-src="test.jpg" data-src-small="test_600.jpg">
+                <img class="b-lazy" src="tiny.gif" data-src="test.jpg" data-src-small="test_480.jpg" data-src-med="test_1000.jpg">
             </div>
             <div class="description">
                 <p>Test one two three</p>
@@ -104,14 +105,22 @@
                 // Initialize
                 var bLazy = new Blazy({
                     breakpoints: [{
-                        width: 600 // max-width
-                            ,
-                        src: 'data-src-small'
+                        width: 480 // max-width
+                        ,
+                        src: 'data-src-small'}
+                        ,
+                        {width: 1000
+                        ,
+                        src: 'data-src-med'
                     }],
-                    container: '#scrolling-container',
                 });
             })();
             </script>
+<script>
+$(window).scroll(function() {
+    $(".header h1").css("opacity", 1 - $(window).scrollTop() / 400);
+});
+</script>
 </body>
 
 </html>

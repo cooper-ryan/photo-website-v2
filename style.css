@@ -1,9 +1,11 @@
 * {
     box-sizing: border-box;
+    padding: 0;
+    margin: 0;
 }
 
 body {
-    font-family: 'Raleway',arial,sans-serif;
+    font-family: 'Raleway', arial, sans-serif;
     font-size: 100%;
     margin: 0;
 }
@@ -11,29 +13,22 @@ body {
 /*header size defined by navbar height. Font scalable by view width. zindex to for fade*/
 .header {
     display: flex;
-    height: calc(100vh - 51px);
+    flex-direction: column;
+    flex-wrap: wrap;
+    height: 100vh;
+    align-items: center;
     justify-content: center;
-    background: #AEAEAE;
+    background-image: url("/test2.jpg");
+    background-position: center;
+    background-size: cover;
+    background-color: #AEAEAE;
     color: #282828;
     font-size: 4vw;
-    z-index: 1;
 }
 
 /*header text*/
 .header h1 {
-    opacity: 1;
     position: fixed;
-}
-
-/*gradient which controls fade*/
-.fadeTop {
-    width: 100%;
-    height: calc(100vh - 51px);
-    z-index: 2;
-    position: absolute;
-    top: 0;
-    background: linear-gradient(to bottom, rgba(174, 174, 174, 0) 0%, rgba(174, 174, 174, .1) 60%, rgba(174, 174, 174, 0.5) 65%, rgba(174, 174, 174, 0.95) 90%, rgba(174, 174, 174, 1) 100%);
-    /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
 }
 
 /*main flex container*/
@@ -44,7 +39,6 @@ body {
     align-items: center;
     justify-content: center;
     background-color: #282828;
-    z-index: 3;
 }
 
 /*album images on album page*/
@@ -63,7 +57,6 @@ body {
     grid-template-areas:
         "photo"
         "description";
-    z-index: 4
 }
 
 .photo {
@@ -107,7 +100,6 @@ ul.topnav {
     position: -webkit-sticky;
     position: sticky;
     top: 0px;
-    z-index: 5;
 }
 
 ul.topnav li {
