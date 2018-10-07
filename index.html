@@ -28,6 +28,7 @@
 <body>
     <div class="header">
         <h1>Ryan Cooper<br>Photography</h1>
+        <h2>↓Enter↓</h2>
     </div>
     <ul class="topnav">
         <li><a class="active" href="index.html">Home</a></li>
@@ -36,7 +37,7 @@
         <!--   <li class="right"><a href="#about">About</a></li> -->
     </ul>
     <div id="home" class="main">
-        <!-- <div class="fadeTop"></div> -->
+
         <div class="album">
             <div class="photo">
                 <a href="/album.html"><img class="b-lazy" src="tiny.gif" data-src="test.jpg" data-src-small="test_480.jpg" data-src-med="test_1000.jpg"></a>
@@ -45,6 +46,7 @@
                 <p>Test one two three</p>
             </div>
         </div>
+
         <div class="album">
             <div class="photo">
                 <img class="b-lazy" src="tiny.gif" data-src="test.jpg" data-src-small="test_480.jpg" data-src-med="test_1000.jpg">
@@ -104,21 +106,23 @@
             (function() {
                 // Initialize
                 var bLazy = new Blazy({
-                    breakpoints: [{
-                        width: 480 // max-width
+                    breakpoints: [
+                        {width: 480 // max-width
                         ,
                         src: 'data-src-small'}
                         ,
                         {width: 1000
                         ,
-                        src: 'data-src-med'
-                    }],
+                        src: 'data-src-med'}
+                    ]
+                    ,
+                    offset: 50
                 });
             })();
             </script>
 <script>
 $(window).scroll(function() {
-    $(".header h1").css("opacity", 1 - $(window).scrollTop() / 400);
+    $(".header h1").css("opacity", 1 - $(window).scrollTop() / 500);
 });
 </script>
 </body>
