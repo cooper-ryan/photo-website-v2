@@ -1,0 +1,118 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <title>Home</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="author" content="Ryan Cooper">
+    <link rel="stylesheet" href="css/style.css">
+    <link href="https://fonts.googleapis.com/css?family=Raleway:500" rel="stylesheet"> 
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+</head>
+
+<body>
+    <div class="header">
+        <h1>Ryan Cooper<br>Photography</h1>
+        <h2>↓Enter↓</h2>
+    </div>
+
+    <ul class="topnav">
+        <li><a class="active" href="index.html">Home</a></li>
+        <li class="right"><a href="Colorado.html">Albums</a></li>
+        <li class="right"><a href="#contact">Contact</a></li>
+    </ul>
+
+    <div id="home" class="main">
+
+        <div class="album">
+            <div class="photo">
+                <a href="album_template.html"><img class="b-lazy" src="tiny.gif" data-src="test.jpg" data-src-small="test_480.jpg" data-src-med="test_1000.jpg"></a>
+            </div>
+            <div class="description">
+                <p>Test one two three</p>
+            </div>
+        </div>
+
+        <div class="album">
+            <div class="photo">
+                <img class="b-lazy" src="tiny.gif" data-src="test.jpg" data-src-small="test_480.jpg" data-src-med="test_1000.jpg">
+            </div>
+            <div class="description">
+                <p>Test one two three</p>
+            </div>
+        </div>
+        <div class="album">
+            <div class="photo">
+                <img class="b-lazy" src="tiny.gif" data-src="test2.jpg" data-src-small="test2_480.jpg" data-src-med="test2_1000.jpg">
+            </div>
+            <div class="description">
+                <p>Test one two three</p>
+            </div>
+        </div>
+        <div class="album">
+            <div class="photo">
+                <img class="b-lazy" src="tiny.gif" data-src="test.jpg" data-src-small="test_480.jpg" data-src-med="test_1000.jpg">
+            </div>
+            <div class="description">
+                <p>Test one two three</p>
+            </div>
+        </div>
+        <div class="album">
+            <div class="photo">
+                <img class="b-lazy" src="tiny.gif" data-src="test.jpg" data-src-small="test_480.jpg" data-src-med="test_1000.jpg">
+            </div>
+            <div class="description">
+                <p>Test one two three</p>
+            </div>
+        </div>
+        <div class="album">
+            <div class="photo">
+                <img class="b-lazy" src="tiny.gif" data-src="test2.jpg" data-src-small="test2_480.jpg" data-src-med="test2_1000.jpg">
+            </div>
+            <div class="description">
+                <p>Test one two three</p>
+            </div>
+        </div>
+        <div class="album">
+            <div class="photo">
+                <img class="b-lazy" src="tiny.gif" data-src="test.jpg" data-src-small="test_480.jpg" data-src-med="test_1000.jpg">
+            </div>
+            <div class="description">
+                <p>Test one two three</p>
+            </div>
+        </div>
+    </div>
+            <div class="footer">
+                <h2>Footer</h2>
+            </div>
+            <!-- Lazy load images load and options-->
+            <script src="//cdn.jsdelivr.net/blazy/latest/blazy.min.js"></script>
+            <script>
+            ;
+            (function() {
+                // Initialize
+                var bLazy = new Blazy({
+                    breakpoints: [
+                        {width: 480 // max-width
+                        ,
+                        src: 'data-src-small'}
+                        ,
+                        {width: 1000
+                        ,
+                        src: 'data-src-med'}
+                    ]
+                    ,
+                    offset: 50
+                });
+            })();
+            </script>
+<!-- Scroll fade -->
+            <script>
+                $(window).scroll(function() {
+                $(".header h1").css("opacity", 1 - $(window).scrollTop() / 500);
+                });
+            </script>
+</body>
+</html>
