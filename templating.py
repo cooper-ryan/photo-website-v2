@@ -1,11 +1,15 @@
-# import the things
+# import the required libs
 import glob
 import os
 import random
+import yaml
+#Define relative data directory
+data_dir="../website_push"
+output_dir="../website_push"
 
 # load the file path names in the directory
 f = []
-for (dirpath, dirnames, filenames) in os.walk("../website_data"):
+for (dirpath, dirnames, filenames) in os.walk(data_dir):
 	# filter hiden folders out of the list
 	dirnames[:] = [d for d in dirnames if not d[0] == '.']
 	break
@@ -20,40 +24,39 @@ for i in range(len(dirnames)):
 	f.close()
 	replace_title = filedata.replace("#album_title",dirnames[i])
 	# remove spaces from the folder name before saving file
-	f = open('../wesbite_data/%s.html' %(dirnames[i].replace(" ","")),'w')
+	f = open('%s.html' %(dirnames[i].replace(" ","")),'w')
 	f.write(replace_title)
 	f.close()
 
-# # make a card tag in the respective html file for each of the sub folders in that file
-# for i in range(len(dirnames)):
-# 	print(dirnames[i])
-# 	# get all the subfolders in each main folder
-# 	temp=[]
-# 	for (dirpath_temp, album_dir, filenames_temp) in os.walk("%s" %dirnames[i]):
-# 		temp.extend(filenames_temp)
-# 		break
-# 	print(filenames_temp)
+# make a card tag in the respective html file for each of the sub folders in that file
+for i in range(len(dirnames)):
+	print(dirnames[i])
+	# get all the subfolders in each main folder
+	temp=[]
+	for (dirpath_temp, album_dir, filenames_temp) in os.walk("%s/%s" %(data_dir,dirnames[i])):
+		temp.extend(filenames_temp)
+		break
+	# print(filenames_temp)
 
-# 	# init the card_tag variable
-# 	card_tag=str("")
-# 	for j in range(len(album_dir)):
-# 		print("--%s" %album_dir[j])
-# 		# make the image list from the current directory
-# 		img_list=glob.glob("%s\%s\*.jpg" %(dirnames[i],album_dir[j]))
-# 		# print("%s\%s\\a.txt" %(dirnames[i],album_dir[j]))
-# 		# print(img_list)
+	# init the card_tag variable
+	card_tag=str("")
+	for j in range(len(album_dir)):
+		print("--%s" %album_dir[j])
+		# make the image list from the current directory
+		# img_list=glob.glob("%s/%s/%s/*.jpg" %(data_dir,dirnames[i],album_dir[j]))
 
-# 		# open the album description text file and read into a variable
-# 		f = open('%s\%s\description.txt' %(dirnames[i],album_dir[j]),'r')
-# 		album_text = f.read()
-# 		f.close()
-# 		# append a tag for each subfolders
-# 		card_tag+=str('<div class="card">\n<img class="card-img-top card" src="%s\%s\zcover.jpg" alt="Card image cap">\n<div class="card-body">\n<h4 class="card-title">%s</h4>\n<p class="card-text">%s</p>\n <a href="%s\%s.html" class="btn btn-primary">View Album</a>\n</div>\n</div>'%(dirnames[i],album_dir[j],album_dir[j],album_text,dirnames[i],album_dir[j].replace(" ","")))
+		# open the album info yaml file and read into a stream
+		with open('%s/%s/%s/info.yaml' %(data_dir,dirnames[i],album_dir[j]),'r') as stream:
+			info=yaml.load(stream)
+		cover_path=str("%s/%s/%s" %(dirnames[i],album_dir[j],info['cover']))
+		# append a tag for each subfolders
+		card_tag+=str('<div class="album">\n<div class="photo">\n<a href="%s/%s.html"><img class="b-lazy" src="tiny.gif" data-src="%s.jpg" data-src-small="%s_480.jpg" data-src-med="%s_1000.jpg"></a>\n</div>\n<div class="description">\n<p>%s</p>\n</div>\n</div>\n'
+			%(dirnames[i],album_dir[j],cover_path,cover_path,cover_path,info['description']))
 
-# 		# init the image_tag var and make the tags
-# 		image_tag=str("")
-# 		for k in range(len(img_list)):
-# 			image_tag+=str('<img class="center" src="%s" srcset="" alt="Placeholder">\n' %img_list[k].replace("%s\\"%dirnames[i],""))
+		# init the image_tag var and make the tags
+		image_tag=str("")
+		for k in range(len(info['order'])):
+			image_tag+=str('<img class="b-lazy" src="tiny.gif" data-src="%s.jpg" data-src-small="%s_480.jpg" data-src-med="%s_1000.jpg">\n' %(info['order'][k],info['order'][k],info['order'][k]))
 
 # 		# open the html template and replace the title
 # 		f = open("image_template.html",'r')
