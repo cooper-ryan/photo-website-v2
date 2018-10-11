@@ -20,18 +20,6 @@ for (dirpath, dirnames, filenames) in os.walk(data_dir):
 
 print(dirnames)
 
-# make a html file for every folder in this directory
-for i in range(len(dirnames)):
-	# open the new file in write and replace the html title
-	f = open("album_template.html",'r')
-	filedata = f.read()
-	f.close()
-	replace_title = filedata.replace("#album_title",dirnames[i])
-	# remove spaces from the folder name before saving file
-	f = open('%s/%s.html' %(output_dir,dirnames[i].replace(" ","")),'w')
-	f.write(replace_title)
-	f.close()
-
 # make a card tag in the respective html file for each of the sub folders in that file
 for i in range(len(dirnames)):
 	print(dirnames[i])
@@ -54,12 +42,12 @@ for i in range(len(dirnames)):
 			info=yaml.load(stream)
 		cover_path=str("%s/%s/%s" %(dirnames[i],album_dir[j],info['cover']))
 		# append a tag for each subfolders
-		card_tag+=str('<div class="album">\n<div class="photo">\n<a href="%s/%s.html"><img class="b-lazy" src="tiny.gif" data-src="%s_1920.jpg" data-src-small="%s_480.jpg" data-src-med="%s_1000.jpg"></a>\n</div>\n<div class="description">\n<p>%s</p>\n</div>\n</div>\n'
-			%(dirnames[i],album_dir[j],cover_path,cover_path,cover_path,info['description']))
+		card_tag+=str('<div class="album">\n<div class="photo">\n<a href="%s/%s.html"><img class="b-lazy" src="/tiny.gif" data-src="%s_1920.jpg" data-src-small="%s_480.jpg" data-src-med="%s_1000.jpg"></a>\n</div>\n<div class="description">\n<p>%s</p>\n</div>\n</div>\n'
+			%(dirnames[i],album_dir[j].replace(" ",""),cover_path,cover_path,cover_path,info['description']))
 
-		#make the output_dir
+		#make the output directory if it does not exist
 		pathlib2.Path('%s/%s/%s' %(output_dir,dirnames[i],album_dir[j])).mkdir(parents=True, exist_ok=True) 
-
+		#define image widths for resize
 		basewidth=[480,1000,1920]
 		for x in range (len(info['order'])):
 			for y in range (len(basewidth)):
@@ -70,32 +58,31 @@ for i in range(len(dirnames)):
 				img.save('%s/%s/%s/%s_%s.jpg' %(output_dir,dirnames[i],album_dir[j],info['order'][x],basewidth[y]),'jpeg',icc_profile=img.info.get('icc_profile'),quality=90)
 			img.close()
 
-		# # init the image_tag var and make the tags
-		# image_tag=str("")
-		# for k in range(len(info['order'])):
-		# 	image_tag+=str('<img class="b-lazy" src="tiny.gif" data-src="%s_1920.jpg" data-src-small="%s_480.jpg" data-src-med="%s_1000.jpg">\n' %(info['order'][k],info['order'][k],info['order'][k]))
+		# init the image_tag var and make the tags
+		image_tag=str("")
+		for k in range(len(info['order'])):
+			img_path=str("%s/%s" %(album_dir[j],info['order'][k]))
+			image_tag+=str('<img class="b-lazy" src="/tiny.gif" data-src="%s_1920.jpg" data-src-small="%s_480.jpg" data-src-med="%s_1000.jpg">\n' %(img_path,img_path,img_path))
 
-		# # replace the image placeholder with generated images tags
-		# f = open('album_template.html','r')
-		# filedata = f.read()
-		# f.close()
-		# replace_image = filedata.replace("<!-- #images_go_here -->",image_tag)
-		# f = open('%s/%s/%s.html' %(output_dir,dirnames[i],album_dir[j].replace(" ","")),'w')
-		# f.write(replace_image)
-		# f.close()
+		# replace the image placeholder with generated images tags
+		f = open('album_template.html','r')
+		filedata = f.read()
+		f.close()
+		replace_image = filedata.replace("<!-- #images_go_here -->",image_tag)
+		replace_title=replace_image.replace("#album_title",album_dir[j])
+		f = open('%s/%s/%s.html' %(output_dir,dirnames[i],album_dir[j].replace(" ","")),'w')
+		f.write(replace_title)
+		f.close()
 
-# 	#add temp tag to end of str to replace later
-# 	card_tag+=str('\n\n#temp_tag')
-
-# 	# open the respective file and append the new card tags to the file
-# 	f = open('%s.html' %(dirnames[i].replace(" ","")),'r')
-# 	filedata = f.read()
-# 	f.close()
-# 	replace_card = filedata.replace("<!-- #card_tag_here -->",card_tag)
-# 	f = open('%s.html' %(dirnames[i].replace(" ","")),'w')
-# 	f.write(replace_card)
-# 	f.close()
+	# open the respective file and append the new card tags to the file
+	f = open('index_template.html','r')
+	filedata = f.read()
+	f.close()
+	replace_card = filedata.replace("<!-- #card_tag_here -->",card_tag)
+	f = open('%s/index.html' %(output_dir),'w')
+	f.write(replace_card)
+	f.close()
 
 #copies latest CSS and JS to push directory
-shutil.copytree('css','../website_push/css')
-shutil.copytree('js','../website_push/js')
+# shutil.copytree('css','../website_push/css')
+# shutil.copytree('js','../website_push/js')

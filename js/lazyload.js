@@ -12,6 +12,5 @@
                 src: 'data-src-med'
             }
         ],
-        container: '#scrolling-container',
     });
 })();

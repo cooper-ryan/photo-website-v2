@@ -18,7 +18,7 @@ body {
     flex-wrap: nowrap;
     height: 100vh;
     justify-content: center;
-    background-image: url("test.jpg");
+    background-image: url("../Sydney/Robertsons Point/IMG_4691_1920.jpg");
     background-position: center;
     background-size: cover;
     background-color: #AEAEAE;
@@ -109,6 +109,14 @@ body {
     opacity: 1;
 }
 
+img {
+    width:100%
+}
+
+img.b-loaded {
+    width:auto
+}
+
 /*Navbar*/
 ul.topnav {
     list-style-type: none;
@@ -151,7 +159,7 @@ ul.topnav li.center {
 /*responsive for screen width. mobile first design*/
 @media screen and (min-width: 600px) {
     .header {
-        background-image: url("test2.jpg");
+        background-image: url("../Sydney/Lavender Bay/IMG_3842_1920.jpg");
         color: #282828;
     }
 
