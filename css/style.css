@@ -199,7 +199,12 @@ ul.topnav li.center {
 }
 
 .footer {
-    padding: 20px;
+    padding: 10px;
     text-align: center;
-    background: #AEAEAE;
+    background: #282828;
+    color: #AEAEAE;
+    text-decoration: none;
+}
+.footer h4{
+    font-size: 100%;
 }

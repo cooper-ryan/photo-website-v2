@@ -19,7 +19,7 @@ for (dirpath, dirnames, filenames) in os.walk(data_dir):
 	break
 
 print(dirnames)
-
+card_tag=str("")
 # make a card tag in the respective html file for each of the sub folders in that file
 for i in range(len(dirnames)):
 	print(dirnames[i])
@@ -29,9 +29,7 @@ for i in range(len(dirnames)):
 		temp.extend(filenames_temp)
 		break
 	# print(filenames_temp)
-
-	# init the card_tag variable
-	card_tag=str("")
+	
 	for j in range(len(album_dir)):
 		print("--%s" %album_dir[j])
 		# make the image list from the current directory for resizing
@@ -84,5 +82,5 @@ for i in range(len(dirnames)):
 	f.close()
 
 #copies latest CSS and JS to push directory
-# shutil.copytree('css','../website_push/css')
-# shutil.copytree('js','../website_push/js')
+shutil.copytree('css','../website_push/css')
+shutil.copytree('js','../website_push/js')
