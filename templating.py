@@ -50,10 +50,13 @@ for i in range(len(dirnames)):
 		for x in range (len(info['order'])):
 			for y in range (len(basewidth)):
 				img = Image.open('%s/%s/%s/%s.jpg' %(data_dir,dirnames[i],album_dir[j],info['order'][x]))
-				wpercent = (basewidth[y]/float(img.width))
-				hsize = int((float(img.height)*float(wpercent)))
-				img = img.resize((basewidth[y],hsize), Image.LANCZOS)
-				img.save('%s/%s/%s/%s_%s.jpg' %(output_dir,dirnames[i],album_dir[j],info['order'][x],basewidth[y]),'jpeg',icc_profile=img.info.get('icc_profile'),quality=90)
+				if float(img.width)>basewidth[y]:
+					wpercent = (basewidth[y]/float(img.width))
+					hsize = int((float(img.height)*float(wpercent)))
+					img = img.resize((basewidth[y],hsize), Image.LANCZOS)
+					img.save('%s/%s/%s/%s_%s.jpg' %(output_dir,dirnames[i],album_dir[j],info['order'][x],basewidth[y]),'jpeg',icc_profile=img.info.get('icc_profile'),quality=90)
+				else:
+					img.save('%s/%s/%s/%s_%s.jpg' %(output_dir,dirnames[i],album_dir[j],info['order'][x],basewidth[y]),'jpeg',icc_profile=img.info.get('icc_profile'),quality=90)
 			img.close()
 
 		# init the image_tag var and make the tags
