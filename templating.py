@@ -43,21 +43,21 @@ for i in range(len(dirnames)):
 		card_tag+=str('<div class="album">\n<div class="photo">\n<a href="%s/%s.html"><img class="b-lazy" src="/tiny.gif" data-src="%s_1920.jpg" data-src-small="%s_480.jpg" data-src-med="%s_1000.jpg"></a>\n</div>\n<div class="description">\n<h4>%s</h4>\n<p>%s</p>\n</div>\n</div>\n'
 			%(dirnames[i],album_dir[j].replace(" ",""),cover_path,cover_path,cover_path,album_dir[j],info['description']))
 
-		#make the output directory if it does not exist
-		pathlib2.Path('%s/%s/%s' %(output_dir,dirnames[i],album_dir[j])).mkdir(parents=True, exist_ok=True) 
-		#define image widths for resize
-		basewidth=[480,1000,1920]
-		for x in range (len(info['order'])):
-			for y in range (len(basewidth)):
-				img = Image.open('%s/%s/%s/%s.jpg' %(data_dir,dirnames[i],album_dir[j],info['order'][x]))
-				if float(img.width)>basewidth[y]:
-					wpercent = (basewidth[y]/float(img.width))
-					hsize = int((float(img.height)*float(wpercent)))
-					img = img.resize((basewidth[y],hsize), Image.LANCZOS)
-					img.save('%s/%s/%s/%s_%s.jpg' %(output_dir,dirnames[i],album_dir[j],info['order'][x],basewidth[y]),'jpeg',icc_profile=img.info.get('icc_profile'),quality=90)
-				else:
-					img.save('%s/%s/%s/%s_%s.jpg' %(output_dir,dirnames[i],album_dir[j],info['order'][x],basewidth[y]),'jpeg',icc_profile=img.info.get('icc_profile'),quality=90)
-			img.close()
+		# #make the output directory if it does not exist
+		# pathlib2.Path('%s/%s/%s' %(output_dir,dirnames[i],album_dir[j])).mkdir(parents=True, exist_ok=True) 
+		# #define image widths for resize
+		# basewidth=[480,1000,1920]
+		# for x in range (len(info['order'])):
+		# 	for y in range (len(basewidth)):
+		# 		img = Image.open('%s/%s/%s/%s.jpg' %(data_dir,dirnames[i],album_dir[j],info['order'][x]))
+		# 		if float(img.width)>basewidth[y]:
+		# 			wpercent = (basewidth[y]/float(img.width))
+		# 			hsize = int((float(img.height)*float(wpercent)))
+		# 			img = img.resize((basewidth[y],hsize), Image.LANCZOS)
+		# 			img.save('%s/%s/%s/%s_%s.jpg' %(output_dir,dirnames[i],album_dir[j],info['order'][x],basewidth[y]),'jpeg',icc_profile=img.info.get('icc_profile'),quality=90)
+		# 		else:
+		# 			img.save('%s/%s/%s/%s_%s.jpg' %(output_dir,dirnames[i],album_dir[j],info['order'][x],basewidth[y]),'jpeg',icc_profile=img.info.get('icc_profile'),quality=90)
+		# 	img.close()
 
 		# init the image_tag var and make the tags
 		image_tag=str("")

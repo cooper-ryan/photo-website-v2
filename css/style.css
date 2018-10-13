@@ -47,6 +47,7 @@ body {
     align-items: center;
     justify-content: center;
     background-color: #282828;
+    padding-bottom: 20px;
 }
 
 .gallery {
@@ -75,7 +76,7 @@ body {
     align-items: center;
 }
 
-.description{
+.description {
     color: #AEAEAE;
     text-align: center;
 }
@@ -174,24 +175,39 @@ ul.topnav li.center {
         float: left;
     }
 
-    .album{
+    .album {
         align-items: flex-end;
     }
 
     .album img {
         max-height: calc(100vh - 52px);
     }
-    .description{
+
+    .description {
         text-align: start;
     }
 }
 
-.footer {
-    padding: 10px;
+
+.footer li a {
+    display: block;
     text-align: center;
-    background: #282828;
-    color: #AEAEAE;
     text-decoration: none;
+    float: none;
+    padding: 16px 16px;
+    color: #282828
+}
+
+.footer li a:hover:not(.active) {
+    background-color: #282828;
+    color: #AEAEAE;
+}
+
+.footer {
+    list-style-type: none;
+    text-align: center;
+    background: #AEAEAE;
+    color: #282828;
 }
 
 .footer h4 {
