@@ -9,6 +9,7 @@ All tasks including;
 * ordering of images within the albums
 * ordering of albums on the landing page
 * album descriptions
+
 are completed by the python script and associated album based yaml files.
 
 ## Dependencies

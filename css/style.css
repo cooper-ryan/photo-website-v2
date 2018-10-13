@@ -49,7 +49,7 @@ body {
     background-color: #282828;
 }
 
-.album_img {
+.gallery {
     display: flex;
     flex-wrap: nowrap;
     flex-direction: column;
@@ -59,42 +59,31 @@ body {
 }
 
 /*album images on main page*/
-.album_img img {
-    margin-top: 15px;
-    max-width: 95%;
-    max-height: calc(98vh - 51px - 10px);
+.gallery img {
+    margin-bottom: 5vw;
+    max-width: 98vw;
+    max-height: 98vh;
 }
 
 /*homepage album grid with text bar*/
 .album {
-    margin-left: 2.5%;
-    display: grid;
-    grid-template-columns: 97.5%;
-    grid-gap: 10px;
-    grid-template-areas:
-        "photo"
-        "description";
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
     z-index: 2;
     margin-top: 2%;
+    align-items: center;
 }
 
-.photo {
-    grid-area: photo;
-}
-
-.description {
-    grid-area: description;
-}
-
-.description p {
+.description{
     color: #AEAEAE;
-    align-self: end;
+    text-align: center;
 }
 
 /*album images properties*/
 .album img {
-    max-width: 100%;
-    max-height: calc(98vh - (3 * 51px) - 10px);
+    max-width: 95vw;
+    max-height: calc(98vh - 51px - 10px);
     border-radius: 5px;
 }
 
@@ -110,11 +99,11 @@ body {
 }
 
 img {
-    width:100%
+    width: 100%
 }
 
 img.b-loaded {
-    width:auto
+    width: auto
 }
 
 /*Navbar*/
@@ -160,7 +149,6 @@ ul.topnav li.center {
 @media screen and (min-width: 600px) {
     .header {
         background-image: url("../Sydney/Lavender Bay/IMG_3842_1920.jpg");
-        color: #282828;
     }
 
     ul.topnav {
@@ -186,15 +174,15 @@ ul.topnav li.center {
         float: left;
     }
 
-    .album {
-        padding-left: 1%;
-        grid-template-columns: 80% auto;
-        grid-template-areas:
-            "photo description";
+    .album{
+        align-items: flex-end;
     }
 
     .album img {
-        max-height: calc(98vh - 51px - 10px);
+        max-height: calc(100vh - 52px);
+    }
+    .description{
+        text-align: start;
     }
 }
 
@@ -205,6 +193,7 @@ ul.topnav li.center {
     color: #AEAEAE;
     text-decoration: none;
 }
-.footer h4{
+
+.footer h4 {
     font-size: 100%;
 }

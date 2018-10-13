@@ -40,8 +40,8 @@ for i in range(len(dirnames)):
 			info=yaml.load(stream)
 		cover_path=str("%s/%s/%s" %(dirnames[i],album_dir[j],info['cover']))
 		# append a tag for each subfolders
-		card_tag+=str('<div class="album">\n<div class="photo">\n<a href="%s/%s.html"><img class="b-lazy" src="/tiny.gif" data-src="%s_1920.jpg" data-src-small="%s_480.jpg" data-src-med="%s_1000.jpg"></a>\n</div>\n<div class="description">\n<p>%s</p>\n</div>\n</div>\n'
-			%(dirnames[i],album_dir[j].replace(" ",""),cover_path,cover_path,cover_path,info['description']))
+		card_tag+=str('<div class="album">\n<div class="photo">\n<a href="%s/%s.html"><img class="b-lazy" src="/tiny.gif" data-src="%s_1920.jpg" data-src-small="%s_480.jpg" data-src-med="%s_1000.jpg"></a>\n</div>\n<div class="description">\n<h4>%s</h4>\n<p>%s</p>\n</div>\n</div>\n'
+			%(dirnames[i],album_dir[j].replace(" ",""),cover_path,cover_path,cover_path,album_dir[j],info['description']))
 
 		#make the output directory if it does not exist
 		pathlib2.Path('%s/%s/%s' %(output_dir,dirnames[i],album_dir[j])).mkdir(parents=True, exist_ok=True) 
