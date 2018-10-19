@@ -1,0 +1,1 @@
+aws s3 sync ../website_push/ s3://ryancooper.tk

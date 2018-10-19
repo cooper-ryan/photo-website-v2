@@ -14,3 +14,7 @@ are completed by the python script and associated album based yaml files.
 
 ## Dependencies
 Requires yaml and the python image library (PIL)
+
+## How it works
+Run templating.py to generate the resized images and html files.
+Run push.sh to sync with the amazon s3 bucket and make the changes live.
