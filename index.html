@@ -7,10 +7,10 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="author" content="Ryan Cooper">
-    <link rel="stylesheet" href="css/style.css">
-    <link href="https://fonts.googleapis.com/css?family=Raleway:500" rel="stylesheet"> 
+    <link rel="stylesheet" href="https://emailoctopus.com/bundles/emailoctopuslist/css/formEmbed.css?1539684646">
+        <link rel="stylesheet" href="css/style.css">
+    <link href="https://fonts.googleapis.com/css?family=Raleway:500" rel="stylesheet">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-    
 </head>
 
 <body>
@@ -20,12 +20,39 @@
     </div>
     <ul class="topnav">
         <li><a class="active" href="index.html">Home</a></li>
-        <li class="right"><a href="Colorado.html">Albums</a></li>
-        <li class="right"><a href="#contact">Contact</a></li>
+        <!-- <li class="right"><a href="Colorado.html">Albums</a></li> -->
+        <li class="right"><a href="#openModal">Sign Up</a></li>
         <!--   <li class="right"><a href="#about">About</a></li> -->
     </ul>
+    <div id="openModal" class="modalDialog">
+        <div>
+            <a href="#close" title="Close" class="close">X</a>
+            <h2>Subscribe to Newsletter</h2>
+            <ul style="padding-bottom: 10px">
+                <li>I will not use your email for any other purpose</li>
+                <li>Each email will have an "Unsubscribe" link</li>
+                <li> They will be infrequent and brief</li>
+                <li>No clickbait!</li> 
+            </ul>
+            <p class="email-octopus-success-message"></p>
+            <p class="email-octopus-error-message"></p>
+            <form method="post" action="https://emailoctopus.com/lists/d2edeaeb-cf62-11e8-a3c9-06b79b628af2/members/embedded/1.3/add" class="email-octopus-form" data-sitekey="6LdYsmsUAAAAAPXVTt-ovRsPIJ_IVhvYBBhGvRV6">
+                <div class="email-octopus-form-row">
+                    <label for="field_0">Email address:</label>
+                    <input id="field_0" name="field_0" type="email" placeholder="">
+                </div>
+                <div class="email-octopus-form-row-hp" aria-hidden="true">
+                    <!-- Do not remove this field, otherwise you risk bot sign-ups -->
+                    <input type="text" name="hpd2edeaeb-cf62-11e8-a3c9-06b79b628af2" tabindex="-1" autocomplete="nope">
+                </div>
+                <div class="email-octopus-form-row-subscribe">
+                    <input type="hidden" name="successRedirectUrl" value="">
+                    <button type="submit">Subscribe</button>
+                </div>
+            </form>
+        </div>
+    </div>
     <div id="home" class="main">
-
         <div class="album">
             <div class="photo">
                 <a href="album.html"><img class="b-lazy" src="tiny.gif" data-src="test.jpg" data-src-small="test_480.jpg" data-src-med="test_1000.jpg"></a>
@@ -34,85 +61,85 @@
                 <p>Test one two three</p>
             </div>
         </div>
-
         <div class="album">
             <div class="photo">
                 <img class="b-lazy" src="tiny.gif" data-src="test.jpg" data-src-small="test_480.jpg" data-src-med="test_1000.jpg">
             </div>
-            <div class="description">
-                <p>Test one two three</p>
+                <div class="description">
+                    <p>Test one two three</p>
+                </div>
             </div>
-        </div>
-        <div class="album">
-            <div class="photo">
-                <img class="b-lazy" src="tiny.gif" data-src="test2.jpg" data-src-small="test2_480.jpg" data-src-med="test2_1000.jpg">
+            <div class="album">
+                <div class="photo">
+                    <img class="b-lazy" src="tiny.gif" data-src="test2.jpg" data-src-small="test2_480.jpg" data-src-med="test2_1000.jpg">
             </div>
-            <div class="description">
-                <p>Test one two three</p>
+                    <div class="description">
+                        <p>Test one two three</p>
+                    </div>
+                </div>
+                <div class="album">
+                    <div class="photo">
+                        <img class="b-lazy" src="tiny.gif" data-src="test.jpg" data-src-small="test_480.jpg" data-src-med="test_1000.jpg">
             </div>
-        </div>
-        <div class="album">
-            <div class="photo">
-                <img class="b-lazy" src="tiny.gif" data-src="test.jpg" data-src-small="test_480.jpg" data-src-med="test_1000.jpg">
+                        <div class="description">
+                            <p>Test one two three</p>
+                        </div>
+                    </div>
+                    <div class="album">
+                        <div class="photo">
+                            <img class="b-lazy" src="tiny.gif" data-src="test.jpg" data-src-small="test_480.jpg" data-src-med="test_1000.jpg">
             </div>
-            <div class="description">
-                <p>Test one two three</p>
+                            <div class="description">
+                                <p>Test one two three</p>
+                            </div>
+                        </div>
+                        <div class="album">
+                            <div class="photo">
+                                <img class="b-lazy" src="tiny.gif" data-src="test2.jpg" data-src-small="test2_480.jpg" data-src-med="test2_1000.jpg">
             </div>
-        </div>
-        <div class="album">
-            <div class="photo">
-                <img class="b-lazy" src="tiny.gif" data-src="test.jpg" data-src-small="test_480.jpg" data-src-med="test_1000.jpg">
+                                <div class="description">
+                                    <p>Test one two three</p>
+                                </div>
+                            </div>
+                            <div class="album">
+                                <div class="photo">
+                                    <img class="b-lazy" src="tiny.gif" data-src="test.jpg" data-src-small="test_480.jpg" data-src-med="test_1000.jpg">
             </div>
-            <div class="description">
-                <p>Test one two three</p>
-            </div>
-        </div>
-        <div class="album">
-            <div class="photo">
-                <img class="b-lazy" src="tiny.gif" data-src="test2.jpg" data-src-small="test2_480.jpg" data-src-med="test2_1000.jpg">
-            </div>
-            <div class="description">
-                <p>Test one two three</p>
-            </div>
-        </div>
-        <div class="album">
-            <div class="photo">
-                <img class="b-lazy" src="tiny.gif" data-src="test.jpg" data-src-small="test_480.jpg" data-src-med="test_1000.jpg">
-            </div>
-            <div class="description">
-                <p>Test one two three</p>
-            </div>
-        </div>
-    </div>
-            <div class="footer">
-               <h4>Built from scratch using a custom pyhton templating engine. Check it out on <a href="https://github.com/cooper-ryan/photo-website-v2">Github</a></h4>
-            </div>
-            <!-- Lazy load images load and options-->
-            <script src="//cdn.jsdelivr.net/blazy/latest/blazy.min.js"></script>
-            <script>
-            ;
-            (function() {
-                // Initialize
-                var bLazy = new Blazy({
-                    breakpoints: [
-                        {width: 480 // max-width
-                        ,
-                        src: 'data-src-small'}
-                        ,
-                        {width: 1000
-                        ,
-                        src: 'data-src-med'}
-                    ]
-                    ,
-                    offset: 50
-                });
-            })();
-            </script>
-<script>
-$(window).scroll(function() {
-    $(".header h1").css("opacity", 1 - $(window).scrollTop() / 500);
-});
-</script>
+                                    <div class="description">
+                                        <p>Test one two three</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="footer">
+                                <h4>Built from scratch using a custom pyhton templating engine. Check it out on <a href="https://github.com/cooper-ryan/photo-website-v2">Github</a></h4>
+                            </div>
+                            <!-- Lazy load images load and options-->
+                            <script src="https://emailoctopus.com/bundles/emailoctopuslist/js/1.3/formEmbed.js?1539684646"></script>
+                            <script src="//cdn.jsdelivr.net/blazy/latest/blazy.min.js"></script>
+                            <script>
+                            ;
+                            (function() {
+                                // Initialize
+                                var bLazy = new Blazy({
+                                    breakpoints: [{
+                                            width: 480 // max-width
+                                                ,
+                                            src: 'data-src-small'
+                                        },
+                                        {
+                                            width: 1000,
+                                            src: 'data-src-med'
+                                        }
+                                    ],
+                                    offset: 50
+                                });
+                            })();
+                            </script>
+                            <script>
+                            $(window).scroll(function() {
+                                $(".header h1").css("opacity", 1 - $(window).scrollTop() / 500);
+                            });
+                            </script>
 </body>
 
 </html>
